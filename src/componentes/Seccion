@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Seccion1 extends Component{
+class Seccion extends Component{
     render() {
         let libro = {
             Titulo: 'El libro',
@@ -30,4 +30,4 @@ class Seccion1 extends Component{
     }
 }
 
-export default Seccion1;
+export default Seccion;

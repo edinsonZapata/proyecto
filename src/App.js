@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './general/imagenes/logo.svg';
 import './general/css/App.css';
 
-import Seccion1 from './componentes/Seccion1';
+import Seccion from './componentes/Seccion';
 
 var nombre = "Zeo";
 var codigo = 2;
@@ -16,8 +16,8 @@ function App() {
           Bienvenido {nombre}.
         </p>
         <h1>Proyecto de prueba {codigo} </h1>
-        <section className="componentes">
-          <Seccion1 />
+        <section className="componente">
+          <Seccion />
         </section>
       </header>
     </div>
