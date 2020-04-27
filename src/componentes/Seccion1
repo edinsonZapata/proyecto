@@ -1,0 +1,33 @@
+import React, { Component } from 'react';
+
+class Seccion1 extends Component {
+    render() {
+        let libro = {
+            Titulo: 'El libro',
+            Autores: ['Carmen', 'Edinson', 'Valentina', 'Martina'],
+            Paginas: 1236
+        };
+
+        return (
+            <div className="componentes">
+                <h1>{'Titulo: ' + libro.Titulo}</h1>
+                <h1>{'Paginas: ' + libro.Paginas}</h1>
+                <hr />
+                <ol>
+                    {
+                        libro.Autores.map((autores, id) => {
+                            console.log(autores);
+                            return (
+                                <li key={id}>
+                                    {autores}
+                                </li>
+                            );
+                        })
+                    }
+                </ol>
+            </div>
+        );
+    }
+}
+
+export default Seccion1;
