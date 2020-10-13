@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class Seccion extends Component{
+class Seccion extends Component {
     render() {
         let libro = {
             Titulo: 'El libro',

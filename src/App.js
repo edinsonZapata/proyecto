@@ -1,27 +1,56 @@
 import React from 'react';
-import logo from './general/imagenes/logo.svg';
+import logo from './general/imagenes/logo.png';
 import './general/css/App.css';
 
-import Seccion from './componentes/Seccion';
+import Seccion from './componentes/Seccion.js';
+import AccesoTareas from './componentes/AccesoTareas.js';
 
-var nombre = "Zeo";
+var nombre = "Familia Zapata Medrano";
 var codigo = 2;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Bienvenido {nombre}.
-        </p>
-        <h1>Proyecto de prueba {codigo} </h1>
-        <section className="componente">
-          <Seccion />
-        </section>
-      </header>
-    </div>
-  );
+    return ( <
+        div className = "App" >
+        <
+        header className = "App-header" >
+        <
+        img src = { logo }
+        className = "App-logo"
+        alt = "logo" / >
+        <
+        p >
+        Bienvenidos { nombre } <
+        /p> <
+        section className = "componentes" >
+        <
+        AccesoTareas / >
+        <
+        /section> <
+        section className = "componentes" >
+        <
+        Seccion / >
+        <
+        /section> <
+        body >
+        <
+        link rel = "stylesheet"
+        href = "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" / >
+
+        <
+        link rel = "stylesheet"
+        href = "https://fonts.googleapis.com/icon?family=Material+Icons" / >
+        <
+        div id = "root" > < /div> < /
+        body >
+
+        <
+        h2 > Cosas < /h2> <
+        p > Aquí encontrará varias cosas: < /p>
+
+        <
+        /header> < /
+        div >
+    );
 }
 
 export default App;
