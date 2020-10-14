@@ -5,7 +5,7 @@ class Login extends React.Component {
     super(args);
     this.state = {
       usuario: "",
-      nombre: "",
+      clave: "",
     };
   }
 
@@ -56,19 +56,19 @@ class Login extends React.Component {
           />
         </div>
         <div>
-          <label htmlfor="nombre"> Nombre: </label>{" "}
+          <label htmlfor="clave"> Clave: </label>{" "}
           <input
-            value={this.state.nombre}
+            value={this.state.clave}
             onChange={this.onChange.bind(this)}
-            name="nombre"
-            id="nombre"
+            name="clave"
+            id="clave"
             type="text"
             required="true"
           />
         </div>
         <div>
           <button onClick={this.guardar.bind(this)} />
-          Guardar
+          Ingresar
           <span>{this.state.mensaje}</span>
         </div>
         <div>
