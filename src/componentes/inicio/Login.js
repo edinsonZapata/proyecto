@@ -1,83 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+//import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+//import "./general/css/App.css";
 
-class Login extends React.Component {
-  constructor(args) {
-    super(args);
-    this.state = {
-      usuario: "",
-      clave: "",
-    };
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
   }
 
-  onChange(evento) {
-    if (evento.target.name === "aceptar") {
-      this.setState({
-        [evento.target.name]: evento.target.checked,
-      });
-    } else {
-      this.setState({
-        [evento.target.name]: evento.target.value,
-      });
-    }
+  function handleSubmit(evento) {
+      evento.preventDefault();
+      alert("Bienvenido");
   }
 
-  guardar() {
-    if (!this.validar()) {
-      return;
-    } else {
-      this.setState({
-        mensaje: "Guardado con exito",
-      });
-    }
-  }
-
-  validar() {
-    if (this.state.aceptar != true) {
-      this.setState({
-        mensaje: "Acepte los terminos y condiciones",
-      });
-      return false;
-    }
-    return true;
-  }
-
-  render() {
-    return (
-      <div>
-        <div>
-          <label htmlfor="usuario"> Usuario: </label>{" "}
-          <input
-            value={this.state.usuario}
-            onChange={this.onChange.bind(this)}
-            name="usuario"
-            id="usuario"
-            type="text"
-            required="true"
-          />
-        </div>
-        <div>
-          <label htmlfor="clave"> Clave: </label>{" "}
-          <input
-            value={this.state.clave}
-            onChange={this.onChange.bind(this)}
-            name="clave"
-            id="clave"
-            type="text"
-            required="true"
-          />
-        </div>
-        <div>
-          <button onClick={this.guardar.bind(this)} />
-          INGRESAR
-          <span>{this.state.mensaje}</span>
-        </div>
-        <div>
-          <label htmlfor="info">Información de registro:</label>
-          <span> {JSON.stringify(this.state)} </span>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className="Login">
+      <form onSubmit={handleSubmit}>
+        <input
+          id="email"
+          placeholder="Ingrese su correo"
+          onChange={(evento) => setEmail(evento.target.value)}
+          value={email}
+        />
+        <input
+          id="clave"
+          placeholder="Ingrese su clave"
+          onChange={(evento) => setPassword(evento.target.value)}
+          value={password}
+        />
+        <button block bsSize="large" disabled={!validateForm()} type="submit">
+          Login
+        </button>
+      </form>
+    </div>
+  );
 }
-
-export default Login;
