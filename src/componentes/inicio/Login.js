@@ -68,7 +68,7 @@ class Login extends React.Component {
         </div>
         <div>
           <button onClick={this.guardar.bind(this)} />
-          Ingresar
+          INGRESAR
           <span>{this.state.mensaje}</span>
         </div>
         <div>
